@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<beans>
+    <bean id="fruitDAO" class="fruit.dao.impl.FruitDAOImpl"/>
+    <bean id="fruitService" class="fruit.service.impl.FruitServiceImpl">
+            <property name="fruitDAO" ref="fruitDAO"/>
+    </bean>
+
+    <!-- 这个bean标签的作用是：将来servletParh中涉及的名字对应的是fruit，那么就让FruitController这个类来处理 -->
+    <bean id="fruit" class="fruit.contrllers.FruitController">
+        <property name="fruitService" ref="fruitService"/>
+    </bean>
+</beans>
