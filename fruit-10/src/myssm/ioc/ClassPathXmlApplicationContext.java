@@ -18,10 +18,19 @@ import java.util.Map;
 public class ClassPathXmlApplicationContext implements BeanFactory{
 
     private Map<String,Object> beanMap = new HashMap<>();
+    private String path = "applicationContext.xml";
 
     public ClassPathXmlApplicationContext() {
+        this("applicationContext.xml");
+    }
+
+    public ClassPathXmlApplicationContext(String path) {
+        if(path == null || "".equals(path)){
+            throw new RuntimeException("IOC容器的配置文件没有指定");
+        }
+
         try {
-            InputStream inputStream = getClass().getClassLoader().getResourceAsStream("applicationContext.xml");
+            InputStream inputStream = getClass().getClassLoader().getResourceAsStream(path);
             //1.创建DocumentBuilderFactory
             DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newDefaultInstance();
             //2.创建DocumentBuilder对象
