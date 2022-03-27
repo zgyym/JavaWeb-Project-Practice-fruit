@@ -2,7 +2,6 @@ package fruit.contrllers;
 
 import fruit.pojo.Fruit;
 import fruit.service.FruitService;
-import fruit.service.impl.FruitServiceImpl;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;

@@ -1,10 +1,8 @@
 package myssm.filters;
 
-import javax.naming.Name;
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.annotation.WebInitParam;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
